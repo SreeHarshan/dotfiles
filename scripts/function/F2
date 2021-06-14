@@ -1,0 +1,25 @@
+#!/usr/bin/zsh
+mode=$(< ~/scripts/function/mode)
+if [ $mode -eq 1 ]
+then
+    firefox&|
+elif [ $mode -eq 2 ]
+then
+    firefox --P school&|
+elif [ $mode -eq 3 ]
+then
+    mpc clear;mpc load chill\ vibes;mpc play
+elif [ $mode -eq 4 ]
+then
+    firefox --P anime&|
+elif [ $mode -eq 5 ]
+then 
+    firefox --P programming&|
+elif [ $mode -eq 6 ]
+then
+    alacritty --command ~/scripts/function/hibernate
+elif [ $mode -eq 7 ]
+then
+    java -jar Downloads/tlauncher/TLauncher-2.75.jar&|
+fi
+i3-msg mode "default"

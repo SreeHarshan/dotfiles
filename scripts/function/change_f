@@ -1,0 +1,56 @@
+#!/usr/bin/zsh
+mode=$1
+c_mode=$(< ~/scripts/function/mode)
+
+#on-change-back
+if [ $c_mode -eq 1 ]
+then
+    echo "1"
+elif [ $c_mode -eq 2 ]
+then
+    echo "2"
+elif [ $c_mode -eq 3 ]
+then
+    pulseeffects -l Song
+elif [ $c_mode -eq 4 ]
+then
+    echo "4"
+elif [ $c_mode -eq 5 ]
+then 
+    echo "5"
+elif [ $c_mode -eq 6 ]
+then
+    echo "6" 
+elif [ $c_mode -eq 7 ]
+then
+    pulseeffects&|
+fi
+
+#on-change
+if [ $mode -eq 1 ]
+then
+    echo "1" > ~/scripts/function/mode
+elif [ $mode -eq 2 ]
+then
+    echo "2" > ~/scripts/function/mode
+elif [ $mode -eq 3 ]
+then
+    echo "3" > ~/scripts/function/mode
+    pulseeffects -l Song
+elif [ $mode -eq 4 ]
+then
+    echo "4" > ~/scripts/function/mode
+    pulseeffects -l Film
+elif [ $mode -eq 5 ]
+then 
+    echo "5" > ~/scripts/function/mode
+elif [ $mode -eq 6 ]
+then
+    echo "6" > ~/scripts/function/mode
+elif [ $mode -eq 7 ]
+then
+    echo "7" > ~/scripts/function/mode
+    pkill pulseeffects
+fi
+
+i3-msg "mode default"

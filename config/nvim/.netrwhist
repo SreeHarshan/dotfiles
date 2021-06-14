@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/harshan/.config/fish'
+let g:netrw_dirhist_7='/home/harshan/.config/fish/functions'
+let g:netrw_dirhist_6='/home/harshan/.config/fish'
+let g:netrw_dirhist_5='/home/harshan/.config/fish/functions'
+let g:netrw_dirhist_4='/home/harshan/.config/polybar/forest'
+let g:netrw_dirhist_3='/home/harshan/scripts/scripts/Activity'
+let g:netrw_dirhist_2='/home/harshan/.config/polybar/forest'
+let g:netrw_dirhist_1='/home/harshan/.config/polybar'
+let g:netrw_dirhist_0='/home/harshan/.config/polybar/forest'
+let g:netrw_dirhist_9='/home/harshan/.config/fish'

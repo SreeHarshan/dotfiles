@@ -1,0 +1,9 @@
+#!/usr/bin/zsh
+walp=$(ls $1 -1 | shuf -n 1)
+walp=$1$walp
+feh --bg-scale $walp
+wal -i $walp
+rm /home/harshan/scripts/curr_wall
+touch /home/harshan/scripts/curr_wall
+echo $walp >> /home/harshan/scripts/curr_wall
+~/scripts/change_cava.py

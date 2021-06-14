@@ -1,0 +1,37 @@
+#!/usr/bin/zsh
+mode=$(< ~/scripts/function/mode)
+out=""
+if [ $mode -eq 1 ]
+then
+    out+="Default"
+elif [ $mode -eq 2 ]
+then
+    out+="Work"
+elif [ $mode -eq 3 ]
+then
+     out+="Music"
+elif [ $mode -eq 4 ]
+then
+     out+="Anime"
+elif [ $mode -eq 5 ]
+then 
+     out+="Programming"
+elif [ $mode -eq 6 ]
+then
+     out+="Shutdown"
+elif [ $mode -eq 7 ]
+then
+     out+="Gaming"
+fi
+
+i3state=$(i3-msg -t get_binding_state)
+i3state=${i3state[@]:9:-2} 
+
+if [ $i3state = "function" ]
+then
+    out+="+"
+elif [ $i3state = "change_function" ]
+then
+    out+="++"
+fi
+echo $out

@@ -1,0 +1,9 @@
+#!/usr/bin/zsh
+in=$1
+out=$1"720"
+for file in $in/**/*(.)
+do
+    outfile=$out${file#"$in"}
+    echo $outfile
+done
+

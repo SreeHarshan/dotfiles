@@ -1,0 +1,8 @@
+mode=$(< ~/scripts/function/mode)
+if [ $mode -eq 5 ]
+then
+    path=$(< ~/scripts/function/work_path)
+    alacritty --working-directory $path
+else
+    alacritty
+fi

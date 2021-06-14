@@ -1,0 +1,31 @@
+#!/usr/bin/zsh
+mode=$(< ~/scripts/function/mode)
+if [ $mode -eq 1 ]
+then
+    echo "Default"
+elif [ $mode -eq 2 ]
+then
+    echo "Work"
+elif [ $mode -eq 3 ]
+then
+    mpc clear
+    artist=$(ls ~/Music/Eng/ -1 | shuf -n 1)
+    current=$(mpc current -f %artist%)
+    while [ $artist = $current ];do artist=$(ls ~/Music/Eng/ -1 | shuf -n 1);done 
+    mpc add "Eng/$artist"
+    mpc play
+ 
+elif [ $mode -eq 4 ]
+then
+    echo "Anime"
+elif [ $mode -eq 5 ]
+then 
+    echo "Programming"
+elif [ $mode -eq 6 ]
+then
+    echo "Shutdown"
+elif [ $mode -eq 7 ]
+then
+    echo "Gaming"
+fi
+i3-msg mode "default"
