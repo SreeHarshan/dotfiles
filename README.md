@@ -15,6 +15,6 @@ I use a polybar theme by [Adi](https://github.com/adi1090x/polybar-themes), modi
 I have modes which does special shortcuts, depending on the mode, u can find details about it in the scripts/function/idea.( I still haven't completed all the features yet)
 
 # Screenshot
-![1](./screenshot5.png)
-![2](./screenshot3.png)
-![3](./screenshot4.png)
+![1](./screenshots/screenshot5.png)
+![2](./screenshots/screenshot3.png)
+![3](./screenshots/screenshot4.png)
