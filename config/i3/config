@@ -8,7 +8,6 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -83,7 +82,8 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # alt tab like behaviour (works on the left side tabbed windows only)
-bindsym Mod1+Tab focus left
+bindsym Mod1+Tab focus right
+bindsym Mod1+Shift+Tab focus left
 
 # split in horizontal orientation
 bindsym $mod+c split h
@@ -157,6 +157,12 @@ bindsym $mod+Shift+grave move container to workspace number $ws11
 bindsym $mod+Shift+minus move container to workspace number $ws12
 bindsym $mod+Shift+equal move container to workspace number $ws13
 
+#Workspace switch
+bindsym $mod+z workspace next
+bindsym $mod+Mod1+z workspace prev
+bindsym $mod+m exec ~/scripts/function/set_desktop
+bindsym $mod+Tab exec ~/scripts/function/switch
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -229,13 +235,15 @@ bindsym $mod+bracketright exec mpc next
 bindsym $mod+Shift+bracketleft exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym $mod+Shift+bracketright exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
-
 # Mouse shortcuts
 bindsym --release button4 notify-send "test"
 bindsym --relase $mod+button4 focus up
 bindsym $mod+button5 focus down
 bindsym KP_Down workspace next
 bindsym KP_End workspace prev
+bindsym KP_Next exec mpc toggle
+bindsym KP_Right exec mpc next
+bindsym KP_Home exec mpc prev
 bindsym --release button9 notify-send "hi" 
 bindsym --release button8 focus right
 bindsym --release button3 notify-send "hi"
@@ -282,12 +290,6 @@ bindsym $mod+Shift+Print exec maim -u -s ~/Pictures/Screenshots/screenshot-$(dat
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 
-#Workspace switch
-bindsym $mod+z workspace next
-bindsym $mod+Control+z workspace prev
-bindsym $mod+Mod1+z workspace prev
-bindsym $mod+Tab workspace back_and_forth
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
@@ -314,7 +316,7 @@ assign [class="Pulseeffects"] $ws10
 assign [instance="cava"] $ws3 
 assign [instance="ncmpcpp"] $ws3
 assign [instance="btm"] $ws11
-assign [class="deluge"] $ws13
+assign [class="Deluge"] $ws13
 
 #Workspace layout
 exec i3-msg "workspace 3;layout splith"

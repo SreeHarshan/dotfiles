@@ -57,7 +57,7 @@
             "state": "true",
             "input-gain": "0",
             "output-gain": "0",
-            "amount": "6",
+            "amount": "8",
             "harmonics": "8.5",
             "scope": "100",
             "floor": "10",
@@ -176,7 +176,7 @@
                     "slope": "x1",
                     "solo": "false",
                     "mute": "false",
-                    "gain": "0.40415704387990559",
+                    "gain": "-5.6859205776173312",
                     "frequency": "947.18511049703125",
                     "q": "1.5047602375372451"
                 },
@@ -186,7 +186,7 @@
                     "slope": "x1",
                     "solo": "false",
                     "mute": "false",
-                    "gain": "-4.122401847575059",
+                    "gain": "-5.3068592057761705",
                     "frequency": "1889.8827562743609",
                     "q": "1.5047602375372449"
                 },
@@ -278,7 +278,7 @@
                     "slope": "x1",
                     "solo": "false",
                     "mute": "false",
-                    "gain": "0.40415704387990559",
+                    "gain": "-5.6859205776173312",
                     "frequency": "947.18511049703125",
                     "q": "1.5047602375372451"
                 },
@@ -288,7 +288,7 @@
                     "slope": "x1",
                     "solo": "false",
                     "mute": "false",
-                    "gain": "-4.122401847575059",
+                    "gain": "-5.3068592057761705",
                     "frequency": "1889.8827562743609",
                     "q": "1.5047602375372449"
                 },
@@ -391,15 +391,15 @@
             "state": "true",
             "input-gain": "0.10000000000000001",
             "output-gain": "0.10000000000000001",
-            "room-size": "Large",
-            "decay-time": "2.0068899999999998",
-            "hf-damp": "20000",
-            "diffusion": "0.5",
-            "amount": "-8.7298564910888672",
+            "room-size": "Large\/smooth",
+            "decay-time": "0.44594499999999998",
+            "hf-damp": "5508.46",
+            "diffusion": "0.54000000000000004",
+            "amount": "-6.5624606609344482",
             "dry": "0",
-            "predelay": "0",
-            "bass-cut": "300",
-            "treble-cut": "5000"
+            "predelay": "25",
+            "bass-cut": "257.64999999999998",
+            "treble-cut": "20000"
         },
         "multiband_compressor": {
             "state": "false",

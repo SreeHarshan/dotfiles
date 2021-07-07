@@ -1,0 +1,22 @@
+#!/usr/bin/zsh
+
+path=$2
+mode=$1
+
+#temp
+alacritty --command "nvim $file"
+notify-send "test"
+
+a='
+if [ $mode = $("o") ]
+then
+    echo $path>~/scripts/function/.files
+elif [ $mode = $("r") ]
+then
+    while IFS= read -r line
+    do
+        alacritty nvim $line
+    done < "/scripts/function/.files"
+fi
+         
+'

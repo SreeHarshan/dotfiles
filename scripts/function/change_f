@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 mode=$1
 c_mode=$(< ~/scripts/function/mode)
-
+i3-msg "mode default"
 #on-change-back
 if [ $c_mode -eq 1 ]
 then
@@ -50,7 +50,6 @@ then
 elif [ $mode -eq 7 ]
 then
     echo "7" > ~/scripts/function/mode
-    pkill pulseeffects
+    #pkill pulseeffects
 fi
 
-i3-msg "mode default"

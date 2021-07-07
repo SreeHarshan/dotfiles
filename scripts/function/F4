@@ -1,5 +1,6 @@
 #!/usr/bin/zsh
 mode=$(< ~/scripts/function/mode)
+i3-msg "mode default"
 if [ $mode -eq 1 ]
 then
     echo "Default"
@@ -11,7 +12,7 @@ then
     mpc clear;mpc load vibes;mpc play
 elif [ $mode -eq 4 ]
 then
-    echo "Anime"
+    thunar Videos
 elif [ $mode -eq 5 ]
 then 
     echo "Programming"
@@ -22,4 +23,3 @@ elif [ $mode -eq 7 ]
 then
     echo "Gaming"
 fi
-i3-msg "mode default"

@@ -11,7 +11,7 @@ dialog --title "Hibernate" \
 # 255 means user hit [Esc] key.
 response=$?
 case $response in
-   0) pkill firefox;zsh ~/scripts/function/change_f 1;systemctl hibernate;;
+   0) pkill firefox;pkill Discord;zsh ~/scripts/function/change_f 1;systemctl hibernate;;
    1) ;;
    255)  ;;
 esac

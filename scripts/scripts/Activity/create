@@ -1,0 +1,35 @@
+#!/usr/bin/zsh 
+touch .activity_created
+activity=$(< .activity_created)
+activites=()
+count=0
+setopt shwordsplit
+for i in $activity; do
+	activites+=$i
+	count=$(($count+1))
+done
+unsetopt shwordsplit
+if [ $count -eq 0 ]
+then   
+	count=$(($count+1)) 
+	name="e$count"
+	a=$(qdbus org.kde.ActivityManager /ActivityManager/Activities org.kde.ActivityManager.Activities.AddActivity $name);
+	activites+="$a" 
+	qdbus org.kde.ActivityManager /ActivityManager/Activities org.kde.ActivityManager.Activities.SetCurrentActivity $a
+	
+else
+	c=$(zenity --title "Activity" --text "Enter activity number:" --entry);
+	if [ "$c" -gt "$count" ]
+	then 
+		count=$(($count+1))
+		name="e$count"
+		a=$(qdbus org.kde.ActivityManager /ActivityManager/Activities org.kde.ActivityManager.Activities.AddActivity $name);	
+		activites+="$a"
+	else
+		a=$activites[c]
+	fi
+	qdbus org.kde.ActivityManager /ActivityManager/Activities org.kde.ActivityManager.Activities.SetCurrentActivity "$a"
+fi
+
+echo "$activites" > ".activity_created"
+

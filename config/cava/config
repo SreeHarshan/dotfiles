@@ -148,12 +148,12 @@
  gradient_count=6
 
 
- gradient_color_1 = '#396687'
- gradient_color_2 = '#9C4F55'
- gradient_color_3 = '#A94239'
- gradient_color_4 = '#BC8867'
- gradient_color_5 = '#D85046'
- gradient_color_6 = '#E9582C'
+ gradient_color_1 = '#27599C'
+ gradient_color_2 = '#2F75C8'
+ gradient_color_3 = '#5C6794'
+ gradient_color_4 = '#6183BA'
+ gradient_color_5 = '#95738F'
+ gradient_color_6 = '#F79471'
 [smoothing]
 
 # Percentage value for integral smoothing. Takes values from 0 - 100.

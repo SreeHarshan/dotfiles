@@ -1,0 +1,27 @@
+#!/usr/bin/zsh 
+a="Music/"
+a3="bdeb513a-3f19-4fc9-b49e-f48c93df2014"
+if test "${1#*$a}" != "$1"
+then 
+	p="$1"
+else
+	p="$a$1"
+fi
+val=${2:-1}
+pr=$( pgrep -P $PPID );
+qdbus org.kde.ActivityManager /ActivityManager/Activities org.kde.ActivityManager.Activities.SetActivityDescription $a3 $pr;
+# kill -9 $PPID
+if [ "$val" = 1 ] 
+then
+	vlc -f --no-video-on-top --qt-start-minimized $p &|;
+	alacritty --config-file scripts/alacritty.yml --command cava&|;
+elif [ "$val" = 2 ]
+then
+	vlc -f --no-video-on-top --qt-start-minimized $p &|;
+	firefox -new-window www.monkeytype.com &|;
+	alacritty --config-file scripts/alacritty.yml --position 0 800 --option window.startup_mode=Windowed --command cava &|;
+elif [ "$val" = 3 ]
+then
+	vlc $p &|;
+	alacritty --config-file scripts/alacritty.yml --option window.startup_mode=Windowed --command cava &|;
+fi

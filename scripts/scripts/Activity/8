@@ -1,0 +1,9 @@
+#!/usr/bin/zsh
+a11="43bb1ac8-793a-479b-b7d7-d52a3248d7ff"
+decp=$(qdbus org.kde.ActivityManager /ActivityManager/Activities org.kde.ActivityManager.Activities.ActivityDescription $a11)
+qdbus org.kde.ActivityManager /ActivityManager/Activities SetCurrentActivity $a11
+if [ $decp = "off" ]
+then
+	qdbus org.kde.ActivityManager /ActivityManager/Activities org.kde.ActivityManager.Activities.SetActivityDescription $a11 "on"
+	sleep 0.1;alacritty
+fi

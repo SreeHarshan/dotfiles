@@ -1,0 +1,326 @@
+#!/usr/bin/python3
+from tkinter import *
+from datetime import datetime
+import subprocess,  pyautogui, time
+from sys import platform
+
+d = {
+    "Monday":
+        {
+            1: "cs", 2: "che", 3: "math", 4: "phy", 5: "cs", 6: "che"
+       },
+    "Tuesday":
+        {
+            1: "eng", 2: "che", 3: "phy", 4: "math"
+        },
+    "Wednesday":
+        {
+            1: "cs", 2: "che", 3: "math", 4: "phy", 
+        },
+    "Thursday":
+        {
+            1: "eng", 2: "math", 3: "che", 4: "phy", 
+        },
+    "Friday":
+        {
+            1: "eng", 2: "math", 3: "che", 4: "phy", 
+        },
+    #"Saturday":
+        #{
+        #    1: "math", 2: "che", 3: "che", 4: "math", 
+        #}
+}
+
+# Timestamps
+stamps = {
+    ("08", "20"): 1,
+    ("09", "10"): 2,
+    ("11", "15"): 3,
+    ("14", "00"): 4
+
+}
+
+periodstamps = [
+    ("08", "20"),
+    ("09", "10"),
+    ("11", "15"),
+    ("14", "00")
+]
+# Links
+link = {
+    "eng": "https://classroom.google.com/u/1/c/MTA0Mzc2MTE0NjQ1",
+    "phy": "https://classroom.google.com/u/1/c/MTMyODAzMDY2MzMz",
+    "math": "https://classroom.google.com/u/1/c/MTMyODE4Mzk1Mjg3",
+    "che": "https://classroom.google.com/u/1/c/MTMyODE4Mzk1MjQz",
+    #"cs": "https://classroom.google.com/u/1/c/MTMyNTMyNTExNTI0"
+    "cs": "https://classroom.google.com/u/1/c/MTA0Mzc2MTE0NjQ1"
+}
+
+
+# Check screen pixels
+def check_pixels(x1, x2, y1, y2, r, g, b):
+    for x in range(x1, x2 + 1):
+        for y in range(y1, y2 + 1):
+            if not pyautogui.pixelMatchesColor(x, y, (r, g, b)):
+                return False
+            else:
+                return True
+    return True
+
+
+# GLOBAL VARS
+#engine = pyttsx3.init()
+p1 = p2 = p3 = "None"
+day = datetime.today().strftime('%A')
+linux_change = 35
+if platform == "linux" or platform == "linux2":
+    linux_change = 35
+elif platform == "win32":
+    linux_change = 0
+
+
+def prev():
+    if p1 != "None":
+        test = subprocess.Popen(["google-chrome", link[p1]], stdout=subprocess.PIPE)
+
+
+def cur():
+    if p2 != "None":
+        test = subprocess.Popen(["google-chrome", link[p2]], stdout=subprocess.PIPE)
+
+
+def next():
+    if p3 != "None":
+        test = subprocess.Popen(["google-chrome", link[p3]], stdout=subprocess.PIPE)
+
+def timetable():
+    tt = Tk()
+    tt.title("Fredric")
+    tt.minsize(120, 150)
+    tt.maxsize(120, 150)
+    tt.configure(background="black")
+    tt.geometry("200x100+800+400")
+
+    Label(tt, text="Time Table", bg="black", fg="white").grid(row=0, column=1)
+    #Label(tt, text="        ", bg="black").grid(row=0, column=0)
+    idx = 1
+    for i in d[day]:
+        Label(tt,text = "   "+str(idx), bg="black", fg="white").grid(row=idx, column=0)
+        Label(tt, text=str(d[day][idx]), bg="black", fg="white").grid(row=idx, column=1)
+        idx += 1
+
+def join():
+    pyautogui.hotkey('alt','tab')
+    time.sleep(1)
+    if p2 !="cs":
+            pyautogui.click(600 * scalex, (310 + linux_change) * scaley)  # Goto meet
+    else:
+            pyautogui.click(600 * scalex, (355 + linux_change) * scaley)  # Goto meet
+    time.sleep(12)
+
+    pyautogui.hotkey('ctrl', 'e')
+    time.sleep(2)
+    pyautogui.hotkey('ctrl', 'd')  # Mute
+    time.sleep(2)
+    pyautogui.click(1300 * scalex, (600 + linux_change) * scaley)  # Join
+    time.sleep(1)
+    pyautogui.doubleClick()  # Fullscreen
+
+def join_wait():
+    pyautogui.hotkey('alt','tab')
+    time.sleep(1)
+    if p2 !="cs":
+            pyautogui.click(600 * scalex, (310 + linux_change) * scaley)  # Goto meet
+    else:
+            pyautogui.click(600 * scalex, (355 + linux_change) * scaley)  # Goto meet
+    time.sleep(12)
+
+    while True:  # Check is class is available
+        if check_pixels(int(250 * scalex), int(1100 * scalex), int((350 + linux_change) * scaley),int((550 + linux_change) * scaley), 255, 255, 255):
+            break
+        pyautogui.press('f5')
+        time.sleep(9)
+
+    pyautogui.hotkey('ctrl', 'e')
+    time.sleep(2)
+    pyautogui.hotkey('ctrl', 'd')  # Mute
+    time.sleep(2)
+    pyautogui.click(1300 * scalex, (600 + linux_change) * scaley)  # Join
+    time.sleep(1)
+    pyautogui.doubleClick()  # Fullscreen
+
+def refresh():
+    pyautogui.hotkey('alt','tab')
+    time.sleep(1)
+    while True:  # Check is class is available
+        if check_pixels(int(250 * scalex), int(1100 * scalex), int((350) * scaley),int((550) * scaley), 255, 255, 255):
+            break
+        pyautogui.press('f5')
+        time.sleep(9)
+
+    pyautogui.hotkey('ctrl', 'e')
+    time.sleep(2)
+    pyautogui.hotkey('ctrl', 'd')  # Mute
+    time.sleep(2)
+    pyautogui.click(1300 * scalex, (600 + linux_change) * scaley)  # Join
+    time.sleep(1)
+    pyautogui.doubleClick()  # Fullscreen
+
+def loop():
+    global p1, p2, p3, scalex, scaley
+
+    # Remove period name
+    display1.delete(0.0, END)
+    display2.delete(0.0, END)
+    display3.delete(0.0, END)
+
+    # get the time
+    now = datetime.now()
+    ch, cm = (int(now.strftime("%H")), int(now.strftime("%M")))
+    p_time = 0
+
+    # check if need to join
+    joinp = False
+
+
+    # Check what period is there
+    for i in range(len(periodstamps)):
+        h = int(periodstamps[i][0])
+        if ch <= h:
+            m = int(periodstamps[i][1])
+            p_time = h,m
+            if cm <= m:
+                # c period is -1
+                # next p is this
+                # p period is -2
+                p1 = i - 2
+                p2 = i - 1
+                p3 = i
+                
+                if m - cm == 0:
+                    if notify.get() == 1:
+                        subprocess.Popen(['notify-send', "Join class"])
+                      #  engine.say("Join class")
+                      #  engine.runAndWait()
+
+                    if autojoin.get() == 1:
+                        joinp = True
+
+            else:
+                # c period is this
+                # next p is +1
+                # p period is -1
+                p1 = i - 1
+                p2 = i
+                p3 = i + 1
+                if cm -m == 0:
+                    if notify.get() == 1:
+                        subprocess.Popen(['notify-send', "Join class"])
+                      #  engine.say("Join class")
+                      #  engine.runAndWait()
+
+                    if autojoin.get() == 1:
+                        joinp = True
+
+            break
+    else:
+        display1.insert(END, "No")
+        display2.insert(END, "class")
+        display3.insert(END, ":)")
+        return
+
+    # Change period number to name
+    if int(p1) >= 0: p1 = d[day][stamps[periodstamps[p1]]]
+    else: p1 = "None"
+
+    if int(p2) >= 0: p2 = d[day][stamps[periodstamps[p2]]]
+    else: p2 = "None"
+
+    if p3 < len(periodstamps): p3 = d[day][stamps[periodstamps[p3]]]
+    else: p3 = "None"
+
+    # print it
+    display1.insert(END, p1)
+    display2.insert(END, p2)
+    display3.insert(END, p3)
+
+    # Autojoin
+    if joinp:
+        next()
+        time.sleep(13)
+        if p3 !="cs":
+            pyautogui.click(600 * scalex, (310 + linux_change) * scaley)  # Goto meet
+        else:
+            pyautogui.click(600 * scalex, (355 + linux_change) * scaley)  # Goto meet
+        time.sleep(12)
+
+        while True:  # Check is class is available
+            if check_pixels(int(250 * scalex), int(1100 * scalex), int((350 + linux_change) * scaley),
+                            int((550 + linux_change) * scaley), 255, 255, 255):
+                break
+            pyautogui.press('f5')
+            time.sleep(9)
+
+        pyautogui.hotkey('ctrl', 'e')
+        time.sleep(2)
+        pyautogui.hotkey('ctrl', 'd')  # Mute
+        time.sleep(2)
+        pyautogui.click(1300 * scalex, (600 + linux_change) * scaley)  # Join
+        time.sleep(1)
+        pyautogui.doubleClick()  # Fullscreen
+
+    min_left = p_time[1] - cm
+    t_left = (p_time[0] - ch)*60
+    if min_left < 0: 
+        min_left *= -1
+        t_left -= min_left
+    else:
+        t_left += min_left
+    t_left *= 60
+    main.after(( 60 - int(now.strftime("%S")) ) * 1000, loop)
+
+
+main = Tk()
+main.title("Fredric")
+main.minsize(240, 140)
+main.maxsize(240, 140)
+main.configure(background="black")
+main.geometry("200x100+800+300")
+screen_width = main.winfo_screenwidth()
+screen_height = main.winfo_screenheight()
+scalex = screen_width / 1920
+scaley = screen_height / 1080
+
+t = Label(main, text="Class Joiner", bg="black", fg="white")
+t.grid(row=0, column=1)
+
+display1 = Text(main, width=7, height=1, wrap=WORD, background="black", foreground="white")
+display1.grid(row=3, column=0)
+display2 = Text(main, width=7, height=1, wrap=WORD, background="black", foreground="white")
+display2.grid(row=3, column=1)
+display3 = Text(main, width=7, height=1, wrap=WORD, background="black", foreground="white")
+display3.grid(row=3, column=2)
+
+Button(main, text="PREV", width=4, command=prev).grid(row=4, column=0)
+Button(main, text="JOIN", width=4, command=cur).grid(row=4, column=1)
+Button(main, text="NEXT", width=4, command=next).grid(row=4, column=2)
+
+notify = IntVar()
+autojoin = IntVar()
+c1 = Checkbutton(main, text="Notify", variable=notify, onvalue=1, offvalue=0, bg="black", fg="white",
+                 selectcolor="black")
+c1.grid(row=5, column=0)
+c2 = Checkbutton(main, text="AutoJoin", variable=autojoin, onvalue=1, offvalue=0, bg="black", fg="white",
+                 selectcolor="black")
+c2.grid(row=5, column=1)
+notify.set(1)
+autojoin.set(1)
+
+Button(main, text="TT", command=timetable).grid(row=5, column=2)
+
+Button(main, text="Wait Join", command=join_wait).grid(row=6, column=0)
+Button(main, text="Join", command=join).grid(row=6, column=1)
+Button(main, text="Refresh", command=refresh).grid(row=6, column=2)
+
+main.after(10, loop)
+main.mainloop()

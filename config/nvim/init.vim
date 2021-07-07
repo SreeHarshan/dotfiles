@@ -13,6 +13,14 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
 Plug 'dag/vim-fish'
+Plug 'preservim/nerdtree'
+Plug 'dart-lang/dart-vim-plugin'
+" inside plug#begin:
+" use normal easymotion when in vim mode
+" Plug 'easymotion/vim-easymotion', Cond(!exists('g:vscode'))
+" use vscode easymotion when in vscode mode
+"Plug 'asvetliakov/vim-easymotion', Cond(exists('g:vscode'), { 'as': 'vsc-easymotion' })
+
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
 " Initialize plugin system
@@ -61,6 +69,38 @@ let g:airline#extensions#tabline#enabled = 1
 " let g:airline_theme = 'onedark'
 " powerline symbols
 let g:airline_powerline_fonts = 1
+
+" Nerdtree
+nnoremap <C-n> :NERDTreeToggle<CR>
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Mappings for CoCList
 " Show all diagnostics.

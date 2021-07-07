@@ -1,0 +1,5 @@
+#!/usr/bin/zsh
+fusuma&|
+snap run discord
+sudo pkcon update
+deluge&|
