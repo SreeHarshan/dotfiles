@@ -1,5 +1,6 @@
 #!/usr/bin/zsh
 mode=$(< ~/scripts/function/mode)
+#out="%{F#ffffff}"
 out=""
 if [ $mode -eq 1 ]
 then
@@ -27,6 +28,7 @@ fi
 i3state=$(i3-msg -t get_binding_state)
 i3state=${i3state[@]:9:-2} 
 
+<<comment
 if [ $i3state = "function" ]
 then
     out+="+"
@@ -34,4 +36,6 @@ elif [ $i3state = "change_function" ]
 then
     out+="++"
 fi
+comment
+out+="%{F-}"
 echo $out

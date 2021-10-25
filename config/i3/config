@@ -12,7 +12,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font Iosevka Nerd Font 8
+font monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -31,10 +31,10 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% 
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -198,6 +198,14 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
+# Arrow keys
+bindsym --release $mod+Mod1+j exec sh ~/scripts/arrow/down
+bindsym --release $mod+Mod1+k exec sh ~/scripts/arrow/up
+#bindsym --release $mod+Mod1+k exec --no-startup-id xdotool key --clearmodifiers up
+bindsym --release $mod+Mod1+l exec sh ~/scripts/arrow/right
+bindsym --release $mod+Mod1+h exec sh ~/scripts/arrow/left
+
 # Function keys
 mode "change_function" {
         bindsym 1 exec ~/scripts/function/change_f 1
@@ -241,6 +249,7 @@ bindsym --relase $mod+button4 focus up
 bindsym $mod+button5 focus down
 bindsym KP_Down workspace next
 bindsym KP_End workspace prev
+bindsym KP_Up exec maim -u -s | xclip -sel clip -t image/png
 bindsym KP_Next exec mpc toggle
 bindsym KP_Right exec mpc next
 bindsym KP_Home exec mpc prev
@@ -267,13 +276,13 @@ gaps bottom 0
 for_window [class="^.*"] border pixel 3 
 
 # Wallpaper changing
-bindsym $mod+backslash exec --no-startup-id scripts/wall_change Pictures/Wallpaper/Digital\ Art/
-bindsym $mod+Shift+backslash exec --no-startup-id scripts/wall_change Pictures/Wallpaper/slide_show/
+bindsym $mod+backslash exec --no-startup-id scripts/wall_change Pictures/Wallpaper/Digital\ Art/ 1
+bindsym $mod+Shift+backslash exec --no-startup-id scripts/wall_change Pictures/Wallpaper/slide_show/ 2
 #bindsym $mod+Shift+backslash exec --no-startup-id feh --bg-scale --random Pictures/Wallpaper/slide_show/
 #bindsym $mod+backslash exec --no-startup-id feh --bg-scale --random Pictures/Wallpaper/Digital\ Art/
 
 # Lock screen
-bindsym $mod+Control+l exec betterlockscreen -l
+bindsym $mod+Alt+l exec betterlockscreen -l
 
 #Dunst 
 bindsym $mod+Shift+x exec dunstctl close
@@ -281,10 +290,10 @@ bindsym $mod+x exec dunstctl close-all
 bindsym $mod+Shift+d --release exec zsh ~/scripts/dnd
 
 #Screenshot
-bindsym Control+Print exec maim | xclip -sel clip -t image/png
-bindsym Control+Shift+Print exec maim -u -s | xclip -sel clip -t image/png
-bindsym $mod+Print exec maim ~/Pictures/Screenshots/screenshot-$(date +%s).png
-bindsym $mod+Shift+Print exec maim -u -s ~/Pictures/Screenshots/screenshot-$(date +%s).png
+bindsym $mod+y exec maim | xclip -sel clip -t image/png
+bindsym $mod+Shift+y exec maim -u -s | xclip -sel clip -t image/png
+bindsym $mod+Control+y exec maim ~/Pictures/Screenshots/screenshot-$(date +%s).png
+bindsym $mod+Control+Shift+y exec maim -u -s ~/Pictures/Screenshots/screenshot-$(date +%s).png
 
 #Brightness
 bindsym XF86MonBrightnessUp exec light -A 5
@@ -298,21 +307,18 @@ bindsym XF86MonBrightnessDown exec light -U 5
 
 #Startup apps
 exec --no-startup-id picom 
-exec --no-startup-id feh --no-startup-id --randomize --bg-scale "Pictures/Wallpaper/Digital Art"
-exec --no-startup-id bash ~/.config/polybar/launch.sh --forest
+exec --no-startup-id scripts/wall_change Pictures/Wallpaper/Digital\ Art/ 1
+exec --no-startup-id polybar -q example -c $HOME/.config/polybar/bar/config
 exec --no-startup-id xcalib -gc 1.4 -a
-exec --no-startup-id discord 
-exec --no-startup-id pavucontrol 
-exec --no-startup-id pulseeffects
-exec --no-startup-id alacritty --class ncmpcpp --command ncmpcpp 
-exec --no-startup-id alacritty --class cava --command cava 
-exec --no-startup-id alacritty --class btm --command btm
-exec --no-startup-id deluge
+exec --no-startup-id fcitx5 -d
+exec --no-startup-id zsh ~/.config/autostart.sh
+
 
 #Assign workspace
 assign [class="discord"] $ws9
 assign [class="Pavucontrol"] $ws10
 assign [class="Pulseeffects"] $ws10
+assign [class="easyeffects"] $ws10
 assign [instance="cava"] $ws3 
 assign [instance="ncmpcpp"] $ws3
 assign [instance="btm"] $ws11

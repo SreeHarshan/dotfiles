@@ -9,7 +9,7 @@ then
     echo "Work"
 elif [ $mode -eq 3 ]
 then
-    mpc clear;mpc load vibes;mpc play
+    easyeffects -l Song
 elif [ $mode -eq 4 ]
 then
     thunar Videos

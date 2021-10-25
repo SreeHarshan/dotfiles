@@ -1,9 +1,27 @@
 #!/usr/bin/zsh
+
+if [ "$2" = "1" ]
+then
+#Normal wallpaper
+read -r walp<~/scripts/wall_order
+wal -i $walp
+count=$(wc -l < ~/scripts/wall_order)
+echo $count
+if [ "$count" = "1" ]
+then
+    zsh ~/scripts/wall_shuffle $1
+fi
+
+mv ~/scripts/wall_order ~/scripts/wall_order_old
+tail -n +2 ~/scripts/wall_order_old > ~/scripts/wall_order
+fi
+if [ "$2" = "2" ]
+then
+#Anime wallpaper
+echo "sup"
 walp=$(ls $1 -1 | shuf -n 1)
 walp=$1$walp
-feh --bg-scale $walp
 wal -i $walp
-rm /home/harshan/scripts/curr_wall
-touch /home/harshan/scripts/curr_wall
-echo $walp >> /home/harshan/scripts/curr_wall
-~/scripts/change_cava.py
+fi
+echo $walp > /home/harshan/scripts/curr_wall
+scripts/change_cava.py

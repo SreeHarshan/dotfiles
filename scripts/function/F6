@@ -8,8 +8,7 @@ then
     echo "Work"
 elif [ $mode -eq 3 ]
 then
-    notify-send "random eng aritst"
-    # Random eng artist
+    easyeffects -l High_bass
 elif [ $mode -eq 4 ]
 then
     echo "Anime"

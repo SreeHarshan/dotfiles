@@ -11,7 +11,7 @@ then
     echo "2"
 elif [ $c_mode -eq 3 ]
 then
-    pulseeffects -l Song
+    echo "3"
 elif [ $c_mode -eq 4 ]
 then
     echo "4"
@@ -23,7 +23,7 @@ then
     echo "6" 
 elif [ $c_mode -eq 7 ]
 then
-    pulseeffects&|
+    #easyeffects&|
 fi
 
 #on-change
@@ -36,11 +36,14 @@ then
 elif [ $mode -eq 3 ]
 then
     echo "3" > ~/scripts/function/mode
-    pulseeffects -l Song
+    easyeffects -l Song
+    pactl set-sink-volume @DEFAULT_SINK@ +20%   
+
 elif [ $mode -eq 4 ]
 then
     echo "4" > ~/scripts/function/mode
-    pulseeffects -l Film
+    easyeffects -l Film
+    pactl set-sink-volume @DEFAULT_SINK@ -20%
 elif [ $mode -eq 5 ]
 then 
     echo "5" > ~/scripts/function/mode

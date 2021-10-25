@@ -8,8 +8,7 @@ then
     echo "Work"
 elif [ $mode -eq 3 ]
 then
-    notify-send "random eng aritst"
-    # Random eng artist
+    easyeffects -l Low_bass
 elif [ $mode -eq 4 ]
 then
     echo "Anime"
@@ -23,3 +22,4 @@ elif [ $mode -eq 7 ]
 then
     echo "Gaming"
 fi
+i3-msg mode "default"

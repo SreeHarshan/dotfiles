@@ -1,7 +1,5 @@
 #!/usr/bin/zsh
-curr=$(i3-msg -t get_workspaces \
-  | jq '.[] | select(.focused==true).name' \
-  | cut -d"\"" -f2)
+curr=$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).name' | cut -d"\"" -f2)
 prev=$(< ~/scripts/function/prev_desktop)
 curr2=$(< ~/scripts/function/curr_desktop)
 mode=$(< ~/scripts/function/mode)
