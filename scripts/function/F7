@@ -1,8 +1,17 @@
 #!/usr/bin/zsh
 mode=$(< ~/scripts/function/mode)
+i3-msg mode "default"
 if [ $mode -eq 1 ]
 then
-    echo "Default"
+    ssid=$(iwgetid -r)
+    if [ "$ssid" = "ESS" ]
+    then
+        nmcli device wifi list;
+        nmcli device wifi connect ESS_5Ghz
+    else
+        nmcli device wifi list;
+        nmcli device wifi connect ESS
+    fi
 elif [ $mode -eq 2 ]
 then
     echo "Work"
@@ -22,4 +31,3 @@ elif [ $mode -eq 7 ]
 then
     echo "Gaming"
 fi
-i3-msg mode "default"

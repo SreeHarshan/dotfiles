@@ -1,13 +1,12 @@
 #!/usr/bin/zsh
 mode=$(< ~/scripts/function/mode)
-#out="%{F#ffffff}"
 out=""
 if [ $mode -eq 1 ]
 then
     out+="Default"
 elif [ $mode -eq 2 ]
 then
-    out+="Work"
+    out+="College"
 elif [ $mode -eq 3 ]
 then
      out+="Music"
@@ -37,5 +36,7 @@ then
     out+="++"
 fi
 comment
+
+
 out+="%{F-}"
 echo $out

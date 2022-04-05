@@ -3,7 +3,7 @@ mode=$(< ~/scripts/function/mode)
 i3-msg mode "default"
 if [ $mode -eq 1 ]
 then
-    echo "Default"
+    zsh ~/.config/starter.sh
 elif [ $mode -eq 2 ]
 then
     echo "Work"
@@ -24,7 +24,7 @@ then
     alacritty&|
 elif [ $mode -eq 6 ]
 then
-    echo "Shutdown"
+    alacritty --command ~/scripts/function/poweroff
 elif [ $mode -eq 7 ]
 then
     pkill firefox

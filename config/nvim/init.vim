@@ -15,13 +15,14 @@ Plug 'vimwiki/vimwiki'
 Plug 'dag/vim-fish'
 Plug 'preservim/nerdtree'
 Plug 'dart-lang/dart-vim-plugin'
+
 " inside plug#begin:
 " use normal easymotion when in vim mode
 " Plug 'easymotion/vim-easymotion', Cond(!exists('g:vscode'))
 " use vscode easymotion when in vscode mode
 "Plug 'asvetliakov/vim-easymotion', Cond(exists('g:vscode'), { 'as': 'vsc-easymotion' })
 
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Initialize plugin system
 call plug#end()

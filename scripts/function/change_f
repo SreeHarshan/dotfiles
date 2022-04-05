@@ -1,7 +1,13 @@
 #!/usr/bin/zsh
+
+#mode changing to
 mode=$1
+echo $1
+#current mode
 c_mode=$(< ~/scripts/function/mode)
+
 i3-msg "mode default"
+
 #on-change-back
 if [ $c_mode -eq 1 ]
 then
@@ -14,7 +20,9 @@ then
     echo "3"
 elif [ $c_mode -eq 4 ]
 then
-    echo "4"
+    xcalib .config/gamma_1.icc
+    xcalib -gc 1.1 -a
+    light -U 10
 elif [ $c_mode -eq 5 ]
 then 
     echo "5"
@@ -23,7 +31,7 @@ then
     echo "6" 
 elif [ $c_mode -eq 7 ]
 then
-    #easyeffects&|
+    echo "7"
 fi
 
 #on-change
@@ -37,13 +45,25 @@ elif [ $mode -eq 3 ]
 then
     echo "3" > ~/scripts/function/mode
     easyeffects -l Song
+    if [ $c_mode -eq 4 ]
+    then
     pactl set-sink-volume @DEFAULT_SINK@ +20%   
+    fi
 
 elif [ $mode -eq 4 ]
 then
     echo "4" > ~/scripts/function/mode
     easyeffects -l Film
+    if [ $c_mode -eq 3 ]
+    then
     pactl set-sink-volume @DEFAULT_SINK@ -20%
+    fi
+
+    #Change gamma for movies and brightness
+    xcalib .config/gamma_1.icc
+    xcalib -gc 1.5 -a
+    light -A 10
+
 elif [ $mode -eq 5 ]
 then 
     echo "5" > ~/scripts/function/mode
@@ -53,6 +73,5 @@ then
 elif [ $mode -eq 7 ]
 then
     echo "7" > ~/scripts/function/mode
-    #pkill pulseeffects
 fi
 

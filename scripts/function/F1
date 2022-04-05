@@ -1,0 +1,5 @@
+#!/usr/bin/zsh
+mode=$(< ~/scripts/function/mode)
+prev=$(< ~/scripts/function/prev_f)
+zsh ~/scripts/function/change_f $prev
+echo $mode > ~/scripts/function/prev_f

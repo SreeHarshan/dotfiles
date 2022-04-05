@@ -1,9 +1,9 @@
-sw_volume: 100
+sw_volume: 84
 audio_device_state:1:My Pulse Output
 state: pause
-current: 2
-time: 223.212000
-random: 0
+current: 89
+time: 87.459000
+random: 1
 repeat: 0
 single: 0
 consume: 0
@@ -11,7 +11,172 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Japanese/CIEL/一角獣 covered by CIEL.mp3
-1:Japanese/CIEL/明けない夜のリリィ covered by CIEL.mp3
-2:Japanese/CIEL/窓を開けて/オリジナルMV窓を開けて CIEL #01.mp3
+0:Eng/5SOS/5SOS - Youngblood.mp3
+1:Eng/Alan Walker/Alan Walker - Alone.mp3
+2:Eng/Alan Walker/Alan Walker - Faded.mp3
+3:Eng/Alan Walker/Alan Walker - Lily (Zuliando Abi Remix).mp3
+4:Eng/Alan Walker/Alan Walker - Sing Me to Sleep.mp3
+5:Eng/Alan Walker/Alan Walker - The Spectre.mp3
+6:Eng/Alan Walker & Ava Max/Alan Walker & Ava Max - Alone, Pt. II.mp3
+7:Eng/Alan Walker, A$AP Rocky/Alan Walker & A$AP Rocky - Live Fast (PUBGM).mp3
+8:Eng/Alan Walker, Sabrina Carpenter & Farruko/Alan Walker, Sabrina Carpenter & Farruko - On My Way.mp3
+9:Eng/Alec Benjamin/Alec Benjamin - If We Have Each Other.mp3
+10:Eng/Alec Benjamin/Alec Benjamin - Water Fountain.mp3
+11:Eng/Alec Benjamin/Alec Benjamin - Annabelle's Homework.mp3
+12:Eng/Alec Benjamin/Alec Benjamin - Let Me Down Slowly.mp3
+13:Eng/Alec Benjamin/Alec Benjamin - Swim.mp3
+14:Eng/Alec Benjamin/Alec Benjamin - Boy in the Bubble.mp3
+15:Eng/Alec Benjamin/Alec Benjamin - Steve.mp3
+16:Eng/Alec Benjamin/Alec Benjamin - Gotta Be a Reason.mp3
+17:Eng/Alec Benjamin/Alec Benjamin - Outrunning Karma.mp3
+18:Eng/Alec Benjamin/Alec Benjamin - If I Killed Someone for You.mp3
+19:Eng/Alec Benjamin/Alec Benjamin - Death of a Hero.mp3
+20:Eng/Alec Benjamin/Alec Benjamin - 1994.mp3
+21:Eng/Alec Benjamin/Alec Benjamin - The Way You Felt.mp3
+22:Eng/Alec Benjamin/Alec Benjamin - Mind Is a Prison.mp3
+23:Eng/Alec Benjamin/Alec Benjamin - Demons.mp3
+24:Eng/Alec Benjamin/Alec Benjamin - Oh My God.mp3
+25:Eng/Alec Benjamin/Alec Benjamin - The Book of You & I.mp3
+26:Eng/Alec Benjamin/Alec Benjamin - Match in the Rain.mp3
+27:Eng/Alec Benjamin/Alec Benjamin - Jesus in LA.mp3
+28:Eng/Alec Benjamin/Alec Benjamin - I'm Not a Cynic.mp3
+29:Eng/Alec Benjamin/Alec Benjamin - Alamo.mp3
+30:Eng/Alec Benjamin/Alec Benjamin - Must Have Been the Wind.mp3
+31:Eng/Alec Benjamin/Alec Benjamin - Just Like You.mp3
+32:Eng/Ariana Grande/Ariana Grande - 7 rings.mp3
+33:Eng/Ariana Grande/Ariana Grande - thank u, next.mp3
+34:Eng/Ariana Grande/Ariana Grande - break up with your girlfriend, i'm bored.mp3
+35:Eng/Ariana Grande, Miley Cyrus & Lana Del Rey/Ariana Grande, Miley Cyrus & Lana Del Rey - Don't Call Me Angel (Charlie's Angels).mp3
+36:Eng/Arizona Zervas/Arizona Zervas - ROXANNE.mp3
+37:Eng/Avicii/Avicii - The Nights.mp3
+38:Eng/benny blanco, Tainy, Selena Gomez & J Balvin/benny blanco, Tainy, Selena Gomez & J Balvin - I Can't Get Enough.mp3
+39:Eng/Billie Eilish & Khalid/Billie Eilish & Khalid - lovely.mp3
+40:Eng/Bruno Mars/Bruno Mars - Count on Me.mp3
+41:Eng/BTS/BTS - Dynamite.mp3
+42:Eng/BTS/BTS feat. Halsey - Boy With Luv.mp3
+43:Eng/Camila Cabello/Camila Cabello feat. Young Thug - Havana.mp3
+44:Eng/Camila Cabello/Camila Cabello - Something's Gotta Give.mp3
+45:Eng/Camila Cabello/Camila Cabello - Shameless.mp3
+46:Eng/Camila Cabello/Camila Cabello feat. DaBaby - My Oh My.mp3
+47:Eng/Camila Cabello/Camila Cabello - Liar.mp3
+48:Eng/Charlie Puth/Charlie Puth - Attention.mp3
+49:Eng/Charlie Puth feat. Selena Gomez/Charlie Puth feat. Selena Gomez - We Don't Talk Anymore.mp3
+50:Eng/Dan + Shay & Justin Bieber/Dan + Shay & Justin Bieber - 10,000 Hours.mp3
+51:Eng/DJ Snake/DJ Snake - Magenta Riddim.mp3
+52:Eng/DJ Snake feat. Justin Bieber/DJ Snake feat. Justin Bieber - Let Me Love You.mp3
+53:Eng/DJ Snake feat. Selena Gomez, Ozuna & Cardi B/DJ Snake feat. Selena Gomez, Ozuna & Cardi B - Taki Taki.mp3
+54:Eng/Dream/Dream - Mask.mp3
+55:Eng/Dream ft. PmBata/Dream ft. PmBata - Roadtrip.mp3
+56:Eng/Ed Sheeran/Ed Sheeran - Shape of You.mp3
+57:Eng/Ed Sheeran & Justin Bieber/Ed Sheeran & Justin Bieber - I Don't Care.mp3
+58:Eng/Eminem/Eminem - Rap God.mp3
+59:Eng/Fall Out Boy/Fall Out Boy - Centuries.mp3
+60:Eng/G-Eazy & Halsey/G-Eazy & Halsey - Him & I.mp3
+61:Eng/Halsey/Halsey feat. Lauren Jauregui - Strangers.mp3
+62:Eng/Halsey/Halsey - Without Me.mp3
+63:Eng/Janji/Janji - Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3
+64:Eng/Jawsh 685 x Jason Derulo/Jawsh 685 x Jason Derulo - Savage Love (Laxed - Siren Beat).mp3
+65:Eng/Jo Cohen & Sex Whales/Jo Cohen & Sex Whales - Jo Cohen & Sex Whales - We Are [NCS Release].mp3
+66:Eng/Juice WRLD/Juice WRLD - Lucid Dreams.mp3
+67:Eng/Justin Bieber/Justin Bieber feat. Quavo - Intentions.mp3
+68:Eng/Justin Bieber/Justin Bieber - Yummy.mp3
+69:Eng/Justin Bieber/Justin Bieber feat. Kehlani - Get Me.mp3
+70:Eng/Justin Bieber/Justin Bieber - What Do You Mean.mp3
+71:Eng/Justin Bieber/Justin Bieber - Sorry.mp3
+72:Eng/K-391 feat. Alan Walker, Julie Bergan & SeungRi/K-391 feat. Alan Walker, Julie Bergan & SeungRi - Ignite.mp3
+73:Eng/Khalid/Khalid - Talk.mp3
+74:Eng/Kygo & Selena Gomez/Kygo & Selena Gomez - It Ain't Me.mp3
+75:Eng/League of Legends feat. Against the Current/League of Legends feat. Against the Current - Legends Never Die.mp3
+76:Eng/League of Legends with Cailin Russo & Chrissy Costanza/League of Legends with Cailin Russo & Chrissy Costanza - Phoenix.mp3
+77:Eng/League of Legends with Valerie Broussard & Ray Chen/League of Legends with Valerie Broussard & Ray Chen - Awaken.mp3
+78:Eng/Lost Sky/Lost Sky - Fearless.mp3
+79:Eng/Lost Sky ft. Sara Skinner/Lost Sky ft. Sara Skinner - Dreams Pt. II.mp3
+80:Eng/Luis Fonsi & Daddy Yankee feat. Justin Bieber/Luis Fonsi & Daddy Yankee feat. Justin Bieber - Despacito (remix).mp3
+81:Eng/Maroon 5/Maroon 5 - Animals.mp3
+82:Eng/Maroon 5/Maroon 5 - Memories.mp3
+83:Eng/Marshmello & Anne-Marie/Marshmello & Anne-Marie - FRIENDS.mp3
+84:Eng/Marshmello ft. CHVRCHES/Marshmello ft. CHVRCHES - Here With Me.mp3
+85:Eng/Martin Garrix & Bebe Rexha/Martin Garrix & Bebe Rexha - In the Name of Love.mp3
+86:Eng/Miles Awy & Braev Remix/Miles Awy & Braev Remix - Heartless.mp3
+87:Eng/Neffex/Neffex - Grateful.mp3
+88:Eng/Neffex/Neffex - Careless.mp3
+89:Eng/Neffex/Neffex - Fight Back.mp3
+90:Eng/OneRepublic/OneRepublic - Rescue Me.mp3
+91:Eng/OneRepublic/OneRepublic - Counting Stars.mp3
+92:Eng/Powfu feat. beabadoobee/Powfu feat. beabadoobee - death bed.mp3
+93:Eng/Sabrina Carpenter/Sabrina Carpenter - Thumbs.mp3
+94:Eng/Selena Gomez/Selena Gomez - Back to You.mp3
+95:Eng/Selena Gomez/Selena Gomez - The Heart Wants What It Wants.mp3
+96:Eng/Selena Gomez/Selena Gomez - Come & Get It.mp3
+97:Eng/Selena Gomez/Selena Gomez - Slow Down.mp3
+98:Eng/Selena Gomez/Selena Gomez - Rare.mp3
+99:Eng/Selena Gomez/Selena Gomez - Dance Again.mp3
+100:Eng/Selena Gomez/Selena Gomez - Look at Her Now.mp3
+101:Eng/Selena Gomez/Selena Gomez - Lose You to Love Me.mp3
+102:Eng/Selena Gomez/Selena Gomez - Ring.mp3
+103:Eng/Selena Gomez/Selena Gomez - Vulnerable.mp3
+104:Eng/Selena Gomez/Selena Gomez - People You Know.mp3
+105:Eng/Selena Gomez/Selena Gomez - Let Me Get Me.mp3
+106:Eng/Selena Gomez/Selena Gomez & 6LACK - Crowded Room.mp3
+107:Eng/Selena Gomez/Selena Gomez - Kinda Crazy.mp3
+108:Eng/Selena Gomez/Selena Gomez - Fun.mp3
+109:Eng/Selena Gomez/Selena Gomez - Cut You Off.mp3
+110:Eng/Selena Gomez/Selena Gomez feat. Kid Cudi - A Sweeter Place.mp3
+111:Eng/Selena Gomez/Selena Gomez - Kill Em With Kindness.mp3
+112:Eng/Selena Gomez/Selena Gomez - Same Old Love.mp3
+113:Eng/Selena Gomez/Selena Gomez feat. A$AP Rocky - Good for You.mp3
+114:Eng/Selena Gomez × Marshmello/Selena Gomez × Marshmello - Wolves.mp3
+115:Eng/Selena Gomez feat. Gucci Mane/Selena Gomez feat. Gucci Mane - Fetish.mp3
+116:Eng/Serena/Serena - Safari.mp3
+117:Eng/Shawn Mendes/Shawn Mendes - Stitches.mp3
+118:Eng/Shawn Mendes/Shawn Mendes - If I Can't Have You.mp3
+119:Eng/Shawn Mendes/Shawn Mendes - Treat You Better.mp3
+120:Eng/Shawn Mendes/Shawn Mendes - In My Blood.mp3
+121:Eng/Shawn Mendes/Shawn Mendes - There's Nothing Holdin' Me Back.mp3
+122:Eng/Shawn Mendes & Camila Cabello/Shawn Mendes & Camila Cabello - Señorita.mp3
+123:Eng/Stephen/Stephen - Crossfire.mp3
+124:Eng/Taylor Swift featuring Brendon Urie of Panic! at the Disco/Taylor Swift featuring Brendon Urie of Panic! at the Disco - ME!.mp3
+125:Eng/The Chainsmokers/The Chainsmokers feat. Kelsea Ballerini - This Feeling.mp3
+126:Eng/The Chainsmokers/The Chainsmokers - Sick Boy.mp3
+127:Eng/The Chainsmokers/The Chainsmokers - You Owe Me.mp3
+128:Eng/The Chainsmokers/The Chainsmokers ft. Amy Shark - The Reaper.mp3
+129:Eng/The Chainsmokers/The Chainsmokers with Kygo - Family.mp3
+130:Eng/The Chainsmokers/The Chainsmokers ft. Sabrina Claudio - See the Way.mp3
+131:Eng/The Chainsmokers/The Chainsmokers ft. blink-182 - P.S. I Hope You're Happy.mp3
+132:Eng/The Chainsmokers/The Chainsmokers - Push My Luck.mp3
+133:Eng/The Chainsmokers/The Chainsmokers with ILLENIUM ft. Lennon Stella - Takeaway.mp3
+134:Eng/The Chainsmokers/The Chainsmokers ft. Bebe Rexha - Call You Mine.mp3
+135:Eng/The Chainsmokers/The Chainsmokers ft. Ty Dolla $ign & bülow - Do You Mean.mp3
+136:Eng/The Chainsmokers/The Chainsmokers - Kills You Slowly.mp3
+137:Eng/The Chainsmokers/The Chainsmokers ft. 5SOS - Who Do You Love.mp3
+138:Eng/The Chainsmokers ft. Daya/The Chainsmokers ft. Daya - Don't Let Me Down.mp3
+139:Eng/The Chainsmokers ft. Halsey/The Chainsmokers ft. Halsey - Closer.mp3
+140:Eng/The Chainsmokers ft. Phoebe Ryan/The Chainsmokers ft. Phoebe Ryan - All We Know.mp3
+141:Eng/The Score/The Score - Unstoppable.mp3
+142:Eng/The Score/The Score - Revolution.mp3
+143:Eng/The Score/The Score - Money Run Low.mp3
+144:Eng/The Score/The Score - Stronger.mp3
+145:Eng/The Score/The Score - Born for This.mp3
+146:Eng/TheFatRat/TheFatRat feat. Anjulie - Fly Away.mp3
+147:Eng/TheFatRat/TheFatRat - Rise Up.mp3
+148:Eng/Unknown Brain ft Chris Linton/Unknown Brain ft Chris Linton - Unknown Brain - Superhero (feat. Chris Linton) [NCS Release].mp3
+149:Eng/Unknown Brain, Rival feat. Jex/Unknown Brain , Rival feat. Jex - Control.mp3
+150:Eng/Various Artists/Camila Cabello - Never Be the Same.mp3
+151:Eng/Various Artists/Portugal. The Man - Feel It Still.mp3
+152:Eng/Various Artists/P!nk - Beautiful Trauma.mp3
+153:Eng/Various Artists/Dua Lipa - New Rules.mp3
+154:Eng/Various Artists/Loud Luxury feat. brando - Body.mp3
+155:Eng/Various Artists/ZAYN feat. Sia - Dusk Till Dawn.mp3
+156:Eng/Various Artists/MAX - Lights Down Low.mp3
+157:Eng/Various Artists/Kesha - Praying.mp3
+158:Eng/Various Artists/Khalid - Young Dumb & Broke.mp3
+159:Eng/Various Artists/SZA feat. Travis Scott - Love Galore.mp3
+160:Eng/Various Artists/Tyler Shaw - Cautious.mp3
+161:Eng/Various Artists/The Chainsmokers - Everybody Hates Me.mp3
+162:Eng/Various Artists/Ellie Goulding - Love Me Like You Do (from 'Fifty Shades of Grey').mp3
+163:Eng/Various Artists/One Direction - Drag Me Down.mp3
+164:Eng/Wiz Khalifa/Wiz Khalifa feat. Charlie Puth - See You Again.mp3
+165:Eng/XXXTENTACION & Lil Pump feat. Maluma & Swae Lee/XXXTENTACION & Lil Pump feat. Maluma & Swae Lee - Arms Around You.mp3
+166:Eng/Zedd & Katy Perry/Zedd & Katy Perry - 365.mp3
+167:Japanese/あたらよ/夜明け前/あたらよ - 夏霞(Music Video).mp3
 playlist_end

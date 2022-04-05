@@ -229,6 +229,7 @@
             "alr-release": 50.0,
             "attack": 5.0,
             "dithering": "None",
+            "external-sidechain": false,
             "gain-boost": true,
             "input-gain": 0.0,
             "lookahead": 5.0,
@@ -243,7 +244,21 @@
         "plugins_order": [
             "bass_enhancer",
             "equalizer",
+            "reverb",
             "limiter"
-        ]
+        ],
+        "reverb": {
+            "amount": -6.562460831962543,
+            "bass-cut": 257.65,
+            "decay-time": 0.4,
+            "diffusion": 0.3899999999999999,
+            "dry": 0.0,
+            "hf-damp": 5508.46,
+            "input-gain": 0.0,
+            "output-gain": 0.0,
+            "predelay": 25.0,
+            "room-size": "Small",
+            "treble-cut": 20000.0
+        }
     }
 }

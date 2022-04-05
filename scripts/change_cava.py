@@ -275,15 +275,15 @@ colors_main = []
 colors_sorted = []
 colors_lightness = []
 colors_lightness_original = []
-print(colors)
+print("Colors in RGB:",colors)
 #Select 6 colors
 l = len(colors)
-#for i in range(int(l/8),l,int(l/7)):
 for i in range(l):
     R = colors[i][0]
     G = colors[i][1]
     B = colors[i][2]
     colors_main.append(colors[i])
+    #Calculate lightness of colors
     colors_lightness.append(0.212 * R + 0.701 * G + 0.087 * B)
     colors_lightness_original.append(0.212 * R + 0.701 * G + 0.087 * B)
 
@@ -292,73 +292,7 @@ colors_lightness.sort()
 for i in colors_lightness:
     idx = colors_lightness_original.index(i)
     colors_sorted.append(colors_main[idx])
-'''
-#Sort them based on shades
-shades = {
-'r' : list(),
-'g' : list(),
-'b' : list(),
-'y' : list(),
-'p' : list(),
-'a' : list(), 
-'b' : list(),
-'w' : list()
-}
-for i in colors_sorted:
-    R = i[0]
-    G = i[1]
-    B = i[2]
-    l = [R,G,B]
-    if R < 20 and G < 20 and B < 20:
-        shades['b'].append(l)
-    elif R > 200 and G >  200 and B > 200:
-        shades['w'].append(l)
-    elif diff(R,G) < 20 and diff(R,B) > 20 and diff(G,B) > 20:
-        shades['y'].append(l)
-    elif diff(R,B) < 20 and diff(R,G) > 20 and diff(B,G) > 20:
-        shades['p'].append(l)
-    elif diff(B,G) < 20 and diff(R,B) > 20 and  diff(R,G) > 20:
-        shades['a'].append(l)
-    elif R > B and R > G:
-        shades['r'].append(l)
-    elif B > R and B > G:
-        shades['b'].append(l)
-    else:
-        shades['g'].append(l) 
 
-
-colors_sorted2 = []
-shades_sorted = []
-shades_sorted2 = []
-color_list = []
-
-for i in shades.values():
-    shades_sorted.append(len(i))
-    shades_sorted2.append(len(i))
-    color_list.append(i)
-
-print()
-print("Shades sorted:",shades_sorted)
-print("Color list:",color_list)
-print("Shades:",shades)
-
-while len(shades_sorted) > 0:
-    m = max(shades_sorted)
-    idx = shades_sorted.index(m)
-    if m == 0:
-        break
-    shades_sorted.remove(m)
-    colors_sorted2.extend(color_list[idx])
-    color_list.pop(idx)
-
-print()
-print("Colors sorted method 2:",colors_sorted2)
-
-colors_sorted2 = colors2hex(colors_sorted2)
-
-print("Colors sorted method 2(hex):",colors_sorted2)
-print()
-'''
 #Convert them to hex
 colors_main = colors2hex(colors_main)
 colors_sorted = colors2hex(colors_sorted)
@@ -374,7 +308,7 @@ print("Colors sorted_index:", end = " ")
 #    print(colors_main.index(i),end=" ")
 print()
 
-#old method ( works better than the new one
+#old method ( works better than the new one )
 colors_sorted.sort()
 #colors_sorted = colors_sorted2
 

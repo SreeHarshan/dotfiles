@@ -184,6 +184,19 @@ mode "resize" {
         bindsym j resize shrink height 10 px or 10 ppt
         bindsym h  resize grow width 10 px or 10 ppt
 
+        # 1 px per pres
+        bindsym Shift+l resize shrink width 1 px or 1 ppt
+        bindsym Shift+k resize grow height 1 px or 1 ppt
+        bindsym Shift+j resize shrink height 1 px or 1 ppt
+        bindsym Shift+h resize grow width 1 px or 1 ppt
+
+        # 5 px per pres
+        bindsym Mod1+l resize shrink width 5 px or 5 ppt
+        bindsym Mod1+k resize grow height 5 px or 5 ppt
+        bindsym Mod1+j resize shrink height 5 px or 5 ppt
+        bindsym Mod1+h resize grow width 5 px or 5 ppt
+
+
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
@@ -220,7 +233,7 @@ mode "change_function" {
 }
 
 mode "function" {
-        bindsym 1 mode "change_function"
+        bindsym 1 exec ~/scripts/function/F1
         bindsym 2 exec ~/scripts/function/F2
         bindsym 3 exec ~/scripts/function/F3
         bindsym 4 exec ~/scripts/function/F4
@@ -228,6 +241,7 @@ mode "function" {
         bindsym 6 exec ~/scripts/function/F6
         bindsym 7 exec ~/scripts/function/F7
         bindsym 8 exec ~/scripts/function/F8
+        bindysm 9 exec ~/scripts/function/F9
         
         bindsym f mode "change_function"
         bindsym Escape mode "default"
@@ -252,6 +266,7 @@ bindsym KP_End workspace prev
 bindsym KP_Up exec maim -u -s | xclip -sel clip -t image/png
 bindsym KP_Next exec mpc toggle
 bindsym KP_Right exec mpc next
+bindsym KP_Left exec ~/scripts/function/switch
 bindsym KP_Home exec mpc prev
 bindsym --release button9 notify-send "hi" 
 bindsym --release button8 focus right
@@ -269,8 +284,9 @@ client.background       #F8F8F2
 
 #i3 gaps
 gaps inner 10
-gaps top 44
+gaps top 52
 gaps bottom 0
+for_window [class="Dunst"] gaps inner 0
 
 #i3 title bar remove 
 for_window [class="^.*"] border pixel 3 
@@ -282,7 +298,7 @@ bindsym $mod+Shift+backslash exec --no-startup-id scripts/wall_change Pictures/W
 #bindsym $mod+backslash exec --no-startup-id feh --bg-scale --random Pictures/Wallpaper/Digital\ Art/
 
 # Lock screen
-bindsym $mod+Alt+l exec betterlockscreen -l
+bindsym $mod+Control+l exec betterlockscreen -l
 
 #Dunst 
 bindsym $mod+Shift+x exec dunstctl close
@@ -307,9 +323,10 @@ bindsym XF86MonBrightnessDown exec light -U 5
 
 #Startup apps
 exec --no-startup-id picom 
+exec --no-startup-id dunst
 exec --no-startup-id scripts/wall_change Pictures/Wallpaper/Digital\ Art/ 1
 exec --no-startup-id polybar -q example -c $HOME/.config/polybar/bar/config
-exec --no-startup-id xcalib -gc 1.4 -a
+exec --no-startup-id xrandr --output eDP1 --gamma 0.85
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id zsh ~/.config/autostart.sh
 
@@ -323,7 +340,8 @@ assign [instance="cava"] $ws3
 assign [instance="ncmpcpp"] $ws3
 assign [instance="btm"] $ws11
 assign [class="Deluge"] $ws13
+assign [class="Fredric"] $ws10
 
 #Workspace layout
-exec i3-msg "workspace 3;layout splith"
-exec i3-msg "workspace 1"
+#exec i3-msg "workspace 3;layout splith"
+#exec i3-msg "workspace 1"

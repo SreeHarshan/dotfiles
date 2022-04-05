@@ -3,7 +3,7 @@ curr=$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).name' | cut -
 prev=$(< ~/scripts/function/prev_desktop)
 curr2=$(< ~/scripts/function/curr_desktop)
 mode=$(< ~/scripts/function/mode)
-if [ "$mode" != 5 ]
+if [ "$mode" != 5 ] && [ "$mode" != 2 ]
 then
     i3-msg workspace back_and_forth
 elif [ $curr != $curr2 ]

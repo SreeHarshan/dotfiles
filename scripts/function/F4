@@ -3,7 +3,11 @@ mode=$(< ~/scripts/function/mode)
 i3-msg "mode default"
 if [ $mode -eq 1 ]
 then
-    echo "Default"
+    pkill btm
+    pkill deluge
+    pkill ncmpcpp
+    pkill cava
+    pkill easyeffects
 elif [ $mode -eq 2 ]
 then
     echo "Work"
@@ -14,11 +18,11 @@ elif [ $mode -eq 4 ]
 then
     thunar Videos
 elif [ $mode -eq 5 ]
-then 
-    echo "Programming"
+then
+    code
 elif [ $mode -eq 6 ]
 then
-    echo "Shutdown"
+    alacritty --command ~/scripts/function/reboot 
 elif [ $mode -eq 7 ]
 then
     echo "Gaming"

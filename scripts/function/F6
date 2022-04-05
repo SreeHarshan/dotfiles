@@ -2,7 +2,7 @@
 mode=$(< ~/scripts/function/mode)
 if [ $mode -eq 1 ]
 then
-    echo "Default"
+    pkill polybar;polybar -q example -c $HOME/.config/polybar/bar/config&
 elif [ $mode -eq 2 ]
 then
     echo "Work"
