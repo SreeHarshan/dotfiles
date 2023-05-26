@@ -1,20 +1,19 @@
 # dotfiles
 + OS: [Arch Linux](https://www.archlinux.org/)
-+ WM : [i3wm](https://i3wm.org/)
++ WM : [bspwm](https://github.com/baskerville/bspwm)
 + Shell: [fish](https://fishshell.com/)
 + Bar: [Polybar](https://github.com/jaagr/polybar)
-+ Lock Screen : [betterscreenlock](https://github.com/pavanjadhaw/betterlockscreen)
 + Compositor: [Picom](https://github.com/yshui/picom)
 + Terminal: [Alacritty](https://github.com/alacritty/alacritty)
 
 # Notes
-I use pywal to change terminal colors and made a custom script to change cava colors too.
-
-I use a polybar theme by [Adi](https://github.com/adi1090x/polybar-themes), modified it to have the bar floating and have a custom script to have mpd song name to scroll.
-
-I have modes which does special shortcuts, depending on the mode, u can find details about it in the scripts/function/idea.( I still haven't completed all the features yet)
+* Polybar theme by [Adi](https://github.com/adi1090x/polybar-themes), modified it to have the bar floating and have a custom script to have mpd song name to scroll.
+* [Rog-control-center](https://gitlab.com/asus-linux/asusctl/-/tree/main/rog-control-center) to control the keyboard lighting
+* [auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq) to power limit the cpu on battery, and automatically increase the fan speed when under load.
+* Although the fan speed wouldn't reach the max rpm, so I manually have to change the fan speed in the [rog-control-center](https://gitlab.com/asus-linux/asusctl/-/tree/main/rog-control-center)
 
 # Screenshot
+i3-wm screenshots
 ![1](./screenshots/screenshot5.png)
 ![2](./screenshots/screenshot3.png)
 ![3](./screenshots/screenshot4.png)
