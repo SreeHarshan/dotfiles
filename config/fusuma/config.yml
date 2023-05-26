@@ -1,0 +1,16 @@
+swipe:
+  3:
+    left:
+      command: "xdotool key super+alt+bracketleft" # History forward
+    right:
+      command: "xdotool key super+alt+bracketright" # History back
+  4:
+    left:
+      command: "xdotool key super+ctrl+Left" # Switch to next workspace
+    right:
+      command: "xdotool key super+ctrl+Right" # Switch to previous workspace
+    up:
+      command: "xdotool key super+Tab" # Switch to next workspace
+    down:
+      command: "xdotool key super+Tab" # Switch to previous workspace
+

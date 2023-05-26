@@ -1,9 +1,8 @@
-sw_volume: 84
-audio_device_state:1:My Pulse Output
-state: pause
-current: 89
-time: 87.459000
-random: 1
+sw_volume: 98
+audio_device_state:1:default detected output
+state: stop
+current: 133
+random: 0
 repeat: 0
 single: 0
 consume: 0
@@ -178,5 +177,4 @@ playlist_begin
 164:Eng/Wiz Khalifa/Wiz Khalifa feat. Charlie Puth - See You Again.mp3
 165:Eng/XXXTENTACION & Lil Pump feat. Maluma & Swae Lee/XXXTENTACION & Lil Pump feat. Maluma & Swae Lee - Arms Around You.mp3
 166:Eng/Zedd & Katy Perry/Zedd & Katy Perry - 365.mp3
-167:Japanese/あたらよ/夜明け前/あたらよ - 夏霞(Music Video).mp3
 playlist_end

@@ -1,10 +1,9 @@
 #!/usr/bin/zsh
-
-s=$(< /sys/class/power_supply/BAT0/status)
+s=$(< /sys/class/power_supply/BAT1/status)
 if [ $s = "Discharging" ]
 then
-    i3-msg "workspace 1"
     pavucontrol&|
+    xrandr --output eDP --mode 2560x1440_60.00
 elif
 then
     zsh ~/.config/starter.sh
