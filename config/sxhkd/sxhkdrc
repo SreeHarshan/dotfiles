@@ -132,10 +132,10 @@ super + {Left,Down,Up,Right}
 
 #Volume
 XF86AudioRaiseVolume
-    pactl set-sink-volume @DEFAULT_SINK@ +1%
+    pactl set-sink-volume @DEFAULT_SINK@ +1% && /home/harshan/.config/sxhkd/notify_volume.sh
 
 XF86AudioLowerVolume
-    pactl set-sink-volume @DEFAULT_SINK@ -1%
+    pactl set-sink-volume @DEFAULT_SINK@ -1% && /home/harshan/.config/sxhkd/notify_volume.sh
 
 # Toggle mute
 XF86AudioMute
@@ -209,3 +209,17 @@ super + alt + j
         zsh ~/scripts/arrow/down
 super + alt + l
         zsh ~/scripts/arrow/right
+
+# Wallpaper change
+super + backslash
+    zsh scripts/wall_change Pictures/Wallpaper/Digital\ Art 1
+
+super + shift + backslash
+    zsh scripts/wall_change Pictures/Wallpaper/slide_show/ 2
+
+# Wifi change
+super + shift + u
+    bash scripts/change_wifi
+# Easy effects change config
+super + u
+    bash scripts/easyeffects_change

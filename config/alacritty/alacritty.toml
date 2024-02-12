@@ -1,0 +1,30 @@
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[colors.primary]
+background = "#000000"
+
+[font]
+size = 17
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.normal]
+family = "iosevka"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = -4
+
+[window]
+dynamic_padding = false
+dynamic_title = true
+opacity = 0.8
+title = "Alacritty"
+
+[window.padding]
+x = 6
+y = 6

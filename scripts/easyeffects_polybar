@@ -1,0 +1,7 @@
+running="`ps -A | grep easyeffects`"
+
+if [ ! -z "$running" ]; then
+    cat ~/scripts/easyeffects_state
+else
+    echo "NA"
+fi

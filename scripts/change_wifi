@@ -1,0 +1,13 @@
+nmcli device wifi rescan
+c_wifi="`nmcli -t -f active,ssid dev wifi | grep yes`"
+c_wifi=${c_wifi:4:30}
+
+if [ "$c_wifi" = "Nothing Phone 2" ];then
+    sleep 1
+    nmcli device wifi connect 'ESS_5GHz'
+else
+    sleep 15
+    nmcli device wifi connect 'Nothing Phone 2'
+fi
+
+echo $c_wifi

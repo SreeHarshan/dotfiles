@@ -1,0 +1,14 @@
+state="`cat ~/scripts/easyeffects_state`"
+if [ "$state" = "Film" ]; then
+    easyeffects -l Song
+    truncate -s 0 ~/scripts/easyeffects_state 
+    echo "Song" >> ~/scripts/easyeffects_state
+    pactl set-sink-volume @DEFAULT_SINK@ +25%
+    echo "Song"
+else 
+    easyeffects -l Film
+    truncate -s 0 ~/scripts/easyeffects_state 
+    echo "Film" >> ~/scripts/easyeffects_state
+    pactl set-sink-volume @DEFAULT_SINK@ -25%
+    echo "Film"
+fi

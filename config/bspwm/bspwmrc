@@ -32,6 +32,7 @@ bspc rule -a android-studio state=floating border=off follow=on
 
 # Assign applications to workspaces
 bspc rule -a discord desktop='^9'
+bspc rule -a slack desktop='^9'
 bspc rule -a Pavucontrol desktop='^10'
 bspc rule -a easyeffects desktop='^10'
 bspc rule -a ncmpcpp desktop='^3'
@@ -43,7 +44,12 @@ bspc rule -a Deluge desktop='^12'
 dunst&
 picom&
 polybar -c ~/.config/polybar/forest/config.ini&
-feh --bg-scale Downloads/girl_sunset.jpg&
-wal -i Downloads/girl_sunset.jpg
+feh --bg-scale walp.jpg&
+wal -i walp.jpg&
 ~/.config/autostart.sh&
 
+# Kill previous xob instances
+pkill xob
+
+# Volume bar
+tail -f xobvolpipe | xob -s volume &
