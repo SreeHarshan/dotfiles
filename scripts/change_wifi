@@ -3,7 +3,7 @@ c_wifi="`nmcli -t -f active,ssid dev wifi | grep yes`"
 c_wifi=${c_wifi:4:30}
 
 if [ "$c_wifi" = "Nothing Phone 2" ];then
-    sleep 1
+    sleep 3
     nmcli device wifi connect 'ESS_5GHz'
 else
     sleep 15

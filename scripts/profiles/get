@@ -1,0 +1,10 @@
+#!/usr/bin/zsh
+
+out=$(asusctl profile  -p)
+out="${out##* }"
+if [[ ( "$out" = "Balanced" ) || ( "$out" = "Quiet" ) || ( "$out" = "Performance" ) ]];
+then
+    echo "$out"
+else
+    echo "NA"
+fi

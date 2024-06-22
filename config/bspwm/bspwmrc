@@ -33,9 +33,9 @@ bspc rule -a android-studio state=floating border=off follow=on
 # Assign applications to workspaces
 bspc rule -a discord desktop='^9'
 bspc rule -a slack desktop='^9'
-bspc rule -a Pavucontrol desktop='^10'
+bspc rule -a pavucontrol desktop='^10'
 bspc rule -a easyeffects desktop='^10'
-bspc rule -a ncmpcpp desktop='^3'
+bspc rule -a ncmpcpp desktop='^2'
 bspc rule -a btm desktop='^11'
 bspc rule -a Deluge desktop='^12'
 
