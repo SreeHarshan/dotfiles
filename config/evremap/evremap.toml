@@ -1,0 +1,36 @@
+# The name of the device to remap.
+# Run `sudo evremap list-devices` to see the devices available
+# on your system.
+device_name = "Asus Keyboard"
+
+# If you have multiple devices with the same name, you can optionally
+# specify the `phys` value that is printed by the `list-devices` subcommand
+# phys = "usb-0000:07:00.3-2.1.1/input0"
+
+# Configure CAPSLOCK as a Dual Role key.
+# Holding it produces LEFTCTRL, but tapping it
+# will produce ESC.
+# Both `tap` and `hold` can expand to multiple output keys.
+[[dual_role]]
+input = "KEY_CAPSLOCK"
+hold = ["KEY_CAPSLOCK"]
+tap = ["KEY_2"]
+
+# This config snippet is useful if your keyboard has an arrow
+# cluster, but doesn't have page up, page down, home or end
+# keys.  Here we're configuring ALT+arrow to map to those functions.
+[[remap]]
+input = ["KEY_LEFTALT", "KEY_H"]
+output = ["KEY_LEFT"]
+
+[[remap]]
+input = ["KEY_LEFTALT", "KEY_J"]
+output = ["KEY_DOWN"]
+
+[[remap]]
+input = ["KEY_LEFTALT", "KEY_K"]
+output = ["KEY_UP"]
+
+[[remap]]
+input = ["KEY_LEFTALT", "KEY_L"]
+output = ["KEY_RIGHT"]

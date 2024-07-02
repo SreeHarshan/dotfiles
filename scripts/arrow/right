@@ -1,3 +1,0 @@
-xdotool keyup super Alt l
-xdotool key Right
-xdotool keydown super Alt

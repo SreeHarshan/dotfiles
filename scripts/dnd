@@ -1,7 +1,0 @@
-#!/usr/bin/zsh
-if $(dunstctl is-paused)
-then 
-    dunstctl set-paused false && notify-send -t 500 "dnd release"
-else 
-    notify-send -t 500 "dnd" && sleep 0.5 && dunstctl set-paused true
-fi

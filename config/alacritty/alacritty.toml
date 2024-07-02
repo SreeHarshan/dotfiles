@@ -1,19 +1,5 @@
-[colors]
-draw_bold_text_with_bright_colors = false
-
-[colors.primary]
-background = "#000000"
-
 [font]
 size = 16
-
-[font.glyph_offset]
-x = 0
-y = 0
-
-[font.normal]
-family = "iosevka"
-style = "Regular"
 
 [font.offset]
 x = 0
@@ -29,16 +15,7 @@ title = "Alacritty"
 x = 8
 y = 18
 
-[cursor]
-smooth_motion = true
-smooth_motion_factor = 0.2
-smooth_motion_spring = 0.5
-block_replace_shape = "block"
-
-[scrolling]
-multiplier=5
-
 [keyboard]
-bindings=[
- {key="Return" , mods= "Shift", action= "SpawnNewInstance" }
+bindings = [
+   {key = "Return", mods = "Shift", action = "SpawnNewInstance" }
 ]

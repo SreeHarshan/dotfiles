@@ -12,7 +12,7 @@
 ## ncmpcpp.
 ##
 #
-#ncmpcpp_directory = ~/.config/ncmpcpp
+ncmpcpp_directory = ~/.config/ncmpcpp
 #
 ##
 ## Directory for storing downloaded lyrics. It defaults to ~/.lyrics since other
@@ -27,13 +27,11 @@
 #
 #mpd_port = 6600
 #
-#mpd_password = ""
-#
 #mpd_connection_timeout = 5
 #
 ## Needed for tag editor and file operations to work.
 ##
-mpd_music_dir = ~/Music
+#mpd_music_dir = ~/music
 #
 #mpd_crossfade_time = 5
 #
@@ -243,19 +241,17 @@ mpd_music_dir = ~/Music
 #
 #alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
 #
-current_item_prefix = $(3)$r
-#205
+#current_item_prefix = $(yellow)$r
 #
 #current_item_suffix = $/r$(end)
 #
-current_item_inactive_column_prefix = $(white)$r
+#current_item_inactive_column_prefix = $(white)$r
 #
 #current_item_inactive_column_suffix = $/r$(end)
 #
-now_playing_prefix =   
-
+#now_playing_prefix = $b
 #
-now_playing_suffix = $/b
+#now_playing_suffix = $/b
 #
 #browser_playlist_prefix = "$2playlist$9 "
 #
@@ -323,7 +319,7 @@ now_playing_suffix = $/b
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-#execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
+#execute_on_song_change = "~/temp.sh"
 #
 ##
 ## Note: Custom command that will be executed each time player state
@@ -384,7 +380,7 @@ user_interface = alternative
 #
 ## Available values: artist, album_artist, date, genre, composer, performer.
 ##
-media_library_primary_tag = album_artist
+#media_library_primary_tag = artist
 #
 #media_library_albums_split_by_date = yes
 #
@@ -466,20 +462,6 @@ media_library_primary_tag = album_artist
 #locked_screen_width_part = 50
 #
 #ask_for_locked_screen_width_part = yes
-#
-##
-## Width of media_library screen columns
-##
-#
-#media_library_column_width_ratio_two = 1:1
-#
-#media_library_column_width_ratio_three = 1:1:1
-#
-##
-## Width of playlist_editor screen columns
-##
-#
-#playlist_editor_column_width_ratio = 1:2
 #
 #jump_to_now_playing_song_at_start = yes
 #
@@ -580,11 +562,11 @@ media_library_primary_tag = album_artist
 ## are used there is a possibility that you'll be able to use only colors with
 ## transparent background.
 #
-#colors_enabled = yes
+colors_enabled = yes
 #
 #empty_tag_color = cyan
 #
-header_window_color = 42
+#header_window_color = default
 #
 #volume_color = default
 #
@@ -592,14 +574,13 @@ header_window_color = 42
 #
 #state_flags_color = default:b
 #
-main_window_color = 46
-# 
+#main_window_color = yellow
 #
 #color1 = white
 #
 #color2 = green
 #
-progressbar_color = black:b
+#progressbar_color = black:b
 #
 #progressbar_elapsed_color = green:b
 #

@@ -1,8 +1,0 @@
-#!/usr/bin/zsh
-mpc clear
-artist=$(ls ~/Music/Eng/ -1 | shuf -n 1)
-current=$(mpc current -f %artist%)
-while [ $artist = $current ];do artist=$(ls ~/Music/Japanese/ -1 | shuf -n 1);done 
-mpc add "Eng/$artist"
-mpc play
-

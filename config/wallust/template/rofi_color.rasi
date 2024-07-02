@@ -1,0 +1,10 @@
+/* colors */
+
+* {
+  al:   #00000000;
+  bg:   {{background}};
+  bga:  {{background}};
+  fg:   {{foreground}};
+  ac:   {{color4}};
+  se:   {{color5}};
+}

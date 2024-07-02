@@ -1,2 +1,0 @@
-#!/usr/bin/zsh
-echo $PWD > ~/scripts/function/work_path

@@ -1,0 +1,64 @@
+{
+    "output": {
+        "bass_enhancer#0": {
+            "amount": 8.0,
+            "blend": 9.0,
+            "bypass": false,
+            "floor": 20.0,
+            "floor-active": false,
+            "harmonics": 9.999999999999995,
+            "input-gain": 0.0,
+            "output-gain": -1.0,
+            "scope": 100.0
+        },
+        "blocklist": [],
+        "convolver#0": {
+            "autogain": true,
+            "bypass": false,
+            "input-gain": 0.0,
+            "ir-width": 100,
+            "kernel-name": "Dolby ATMOS ((128K MP3)) 1.Default",
+            "output-gain": -4.0
+        },
+        "limiter#0": {
+            "alr": false,
+            "alr-attack": 5.0,
+            "alr-knee": 0.0,
+            "alr-release": 50.0,
+            "attack": 5.0,
+            "bypass": true,
+            "dithering": "None",
+            "external-sidechain": false,
+            "gain-boost": false,
+            "input-gain": 0.0,
+            "lookahead": 5.0,
+            "mode": "Herm Thin",
+            "output-gain": 0.0,
+            "oversampling": "None",
+            "release": 15.0,
+            "sidechain-preamp": 0.0,
+            "stereo-link": 100.0,
+            "threshold": -1.0000000000000007
+        },
+        "plugins_order": [
+            "reverb#0",
+            "bass_enhancer#0",
+            "convolver#0",
+            "limiter#0"
+        ],
+        "reverb#0": {
+            "amount": -10.000000000000007,
+            "bass-cut": 300.0,
+            "bypass": false,
+            "decay-time": 1.5,
+            "diffusion": 0.5,
+            "dry": 1.5000000000000002,
+            "hf-damp": 5000.0,
+            "input-gain": 0.0,
+            "output-gain": -1.0,
+            "predelay": 0.0,
+            "room-size": "Large/smooth",
+            "treble-cut": 5000.0
+        }
+    }
+}

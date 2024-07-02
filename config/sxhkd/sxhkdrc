@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + d
-	~/.config/rofi/launchers/type-3/launcher.sh
+	rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/launcher.rasi
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -31,8 +31,8 @@ super + m
 	bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
-#super + y
-#	bspc node newest.marked.local -n newest.!automatic.local
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest window
 super + g
@@ -66,20 +66,14 @@ super + {o,b,comma,period}
 super + {_,shift + }c
 	bspc node -f {next,prev}.local.!hidden.window
 
-# focus the next/previous desktop in the current monitor
-super + {x,alt+x}
-	bspc desktop -f {prev,next}.local
 
+# focus the next/previous desktop in the current monitor
 super + {z,alt+z}
-        bspc desktop -f {next,prev}.local.occupied
+	bspc desktop -f {next,prev}.local.occupied
 
 # focus the last node/desktop
 super + {grave,Tab}
 	bspc {node,desktop} -f last
-
-#mouse key
-KP_Left
-    bspc desktop -f last
 
 # focus the older or newer node in the focus history
 super + {o,i}
@@ -88,11 +82,12 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0,-,+}
-	bspc {desktop -f,node -d} '^{1-9,10,11,12}'
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
 # next 10
 super + alt + {_, shift + }{1-9,0}
     bspc {desktop -f,node -d} '^{11,12,13,14,15,16,17,18,19,20}'
+
 
 #
 # preselect
@@ -119,23 +114,24 @@ super + ctrl + shift + space
 #
 
 # expand a window by moving one of its side outward
-super + alt + shift + {h,j,k,l}
+super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
-super + ctrl + shift + {h,j,k,l}
+super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+
 #Volume
 XF86AudioRaiseVolume
-    pactl set-sink-volume @DEFAULT_SINK@ +1% && /home/harshan/.config/sxhkd/notify_volume.sh
+	~/.config/scripts/notification/volume.sh --inc
 
 XF86AudioLowerVolume
-    pactl set-sink-volume @DEFAULT_SINK@ -1% && /home/harshan/.config/sxhkd/notify_volume.sh
+	~/.config/scripts/notification/volume.sh --dec
 
 # Toggle mute
 XF86AudioMute
@@ -144,15 +140,11 @@ XF86AudioMute
 # Brightness
 # Increase the brightness
 XF86MonBrightnessUp
-    light -A 5 
+    ~/.config/scripts/notification/brightness.sh --inc
 
 # Decrease the brightness
 XF86MonBrightnessDown
-    light -U 5 
-
-# LockScreen
-super + shift  + l 
-        xsecurelock 
+    ~/.config/scripts/notification/brightness.sh --dec
 
 # ScreenShot
 super + y
@@ -178,7 +170,7 @@ super + shift + p
         playerctl play-pause
 
 super + shift + bracket{left,right}
-        pactl set-sink-volume @DEFAULT_SINK@ {-1%,+1%}
+	playerctl {previous,next}
 
 # XF86 
 # Play/Pause
@@ -193,46 +185,21 @@ XF86AudioNext
 XF86AudioPrev
     playerctl previous
 
-super+alt+bracket{left,right}
-    playerctl {previous,next}
 
 # Mouse
 super + control + {Left,Right}
         bspc desktop -f {prev,next}.local.occupied
+# Notification
+super + x
+	dunstctl close
 
-# Arrow keys
-super + alt + h
-        zsh ~/scripts/arrow/left
-super + alt + k
-        zsh ~/scripts/arrow/up
-super + alt + j
-        zsh ~/scripts/arrow/down
-super + alt + l
-        zsh ~/scripts/arrow/right
-
-# Wallpaper change
+# Wallpaper
 super + backslash
-    zsh scripts/wall_change Pictures/Wallpaper/Digital\ Art 1
+	~/.config/scripts/wallpaper/random_wallpaper.sh
 
-super + shift + backslash
-    zsh scripts/wall_change Pictures/Wallpaper/slide_show/ 2
+# Keyboard broken, workaround to press broken keys :/
+#XF86Launch1
+#	~/.config/scripts/keys/two.sh
 
-# Wifi change
-super + shift + u
-    bash scripts/change_wifi
-# Easy effects change config
-super + u
-    bash scripts/easyeffects_change
-
-
-# Switch keyboard
-super + space
-    scripts/switch_kblayout 
-
-# Power menu
-super + shift + s
-    ~/.config/rofi/powermenu/type-4/powermenu.sh
-
-# Firefox 
-super + shift + d
-    ~/.config/rofi/firefox_laucher/start.sh
+#super + control + XF86Launch1
+#	~/.config/scripts/keys/at.sh
